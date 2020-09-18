@@ -14,6 +14,18 @@
   }
 
   &__item {
+    &.is-animated {
+      transition-delay: 0.4s;
+
+      &:nth-child(2n) {
+        transition-delay: 0.8s;
+      }
+
+      &:nth-child(3n) {
+        transition-delay: 1.2s;
+      }
+    }
+
     &:not(:first-of-type) {
       margin-top: 50px;
 
@@ -25,14 +37,6 @@
     @include mq-up(md) {
       width: 33.33%;
       padding-left: 10.7%;
-
-      &:nth-child(2n) {
-        transition-delay: 0.4s;
-      }
-
-      &:nth-child(3n) {
-        transition-delay: 0.8s;
-      }
     }
   }
 

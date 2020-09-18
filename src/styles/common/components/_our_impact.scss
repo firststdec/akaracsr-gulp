@@ -12,6 +12,24 @@
     min-height: 700px;
   }
 
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+    content: '';
+  }
+
+  &.is-animated::before {
+    opacity: 0;
+    transition-delay: 0.5s;
+  }
+
   &__inner {
     @include mq-up(md) {
       margin: auto;
@@ -51,6 +69,10 @@
     position: absolute;
     width: 100vw;
     bottom: 20%;
+    
+    &.is-animated {
+      transition-delay: 0.5s;
+    }
 
     @include mq-up(md) {
       bottom: 100px;

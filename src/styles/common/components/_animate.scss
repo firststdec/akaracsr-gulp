@@ -3,7 +3,10 @@
 
   &.is-animated {
     opacity: 1;
-    transition: opacity $duration ease-out;
+    // transition: opacity $duration ease-out;
+    transition-property: opacity;
+    transition-duration: $duration;
+    transition-timing-function: ease-out;
   }
 }
 
@@ -14,7 +17,10 @@
   &.is-animated {
     opacity: 1;
     transform: translateY(0) translateZ(0);
-    transition: opacity $duration ease-out, transform $duration ease-out;
+    // transition: opacity $duration ease-out, transform $duration ease-out;
+    transition-property: opacity, transform;
+    transition-duration: $duration, $duration;
+    transition-timing-function: ease-out, ease-out;
   }
 }
 
@@ -25,7 +31,10 @@
   &.is-animated {
     opacity: 1;
     transform: translateY(0) translateZ(0);
-    transition: opacity $duration ease-out, transform $duration ease-out;
+    // transition: opacity $duration ease-out, transform $duration ease-out;
+    transition-property: opacity, transform;
+    transition-duration: $duration, $duration;
+    transition-timing-function: ease-out, ease-out;
   }
 }
 

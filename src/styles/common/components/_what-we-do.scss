@@ -41,7 +41,6 @@
       background-color: #000;
       opacity: 1;
       transition: opacity 0.8s ease-out;
-      transition-delay: 0.5s;
       content: '';
     }
 
@@ -60,6 +59,7 @@
     &.is-animated {
       &::before {
         opacity: 0;
+        transition-delay: 0.5s;
       }
     }
 
@@ -178,8 +178,12 @@
       color: $blue;
     }
 
+    &.is-animated {
+      transition-delay: 0.4s;
+    }
+
     > .is-animated {
-      transition-delay: 0.6s;
+      transition-delay: 0.8s;
     }
   }
 }
