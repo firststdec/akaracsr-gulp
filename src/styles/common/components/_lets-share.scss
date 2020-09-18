@@ -22,6 +22,24 @@
     background: url(../images/lets-share/bg_lets_share.jpg) center no-repeat;
     background-size: cover;
     opacity: 0.4;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+      width: 100%;
+      background: #222;
+      opacity: 1;
+      transition: opacity 1s ease-out;
+      content: '';
+    }
+
+    &.is-animated:after {
+      opacity: 0;
+      transition-delay: 0.4s;
+    }
   }
 
   &__in {
@@ -38,7 +56,7 @@
     left: 20px;
     right: 20px;
     bottom: 40px;
-    z-index: 1;
+    z-index: 2;
     padding: 40px 30px 30px;
     background-color: #fff;
 
@@ -47,9 +65,15 @@
       right: 0;
       top: 320px;
       bottom: auto;
-      display: flex;
       width: 606px;
       padding: 75px 60px 60px;
+    }
+
+    &-in {
+      @include mq-up(md) {
+        display: flex;
+        transition-delay: 0.5s !important;
+      }
     }
   }
 
@@ -60,8 +84,8 @@
     z-index: 1;
     min-width: 160px;
     height: 54px;
+    margin-top: -25px;
     font-size: 1.7rem;
-    transform: translateY(-50%);
   }
 
   &__text {

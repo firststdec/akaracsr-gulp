@@ -27,7 +27,7 @@
 
   &.is-animated::before {
     opacity: 0;
-    transition-delay: 0.5s;
+    transition-delay: 0.5s !important;
   }
 
   &__inner {
@@ -71,7 +71,7 @@
     bottom: 20%;
     
     &.is-animated {
-      transition-delay: 0.5s;
+      transition-delay: 0.5s !important;
     }
 
     @include mq-up(md) {

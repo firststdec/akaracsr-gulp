@@ -137,9 +137,16 @@ const activityScroller = () => {
   }
 
   const $scroller = $('.js-activity-scroller');
+  const $row = $('.js-activity-row');
   const $prev = $nav.children('.c-activity__nav-prev');
   const $next = $nav.children('.c-activity__nav-next');
   const DISABLED_CLASS = 'is-disabled';
+  const arrPos = [];
+  let curIndex = 0;
+
+  $row.find('.js-point').each(function () {
+    arrPos.push($(this).position().left);
+  });
 
   const checkPosition = () => {
     const boxWidth = $scroller.width();
@@ -151,19 +158,31 @@ const activityScroller = () => {
   };
 
   $prev.on('click', function () {
-    if ($(this).hasClass(DISABLED_CLASS)) {
+    if ($(this).hasClass(DISABLED_CLASS) || $scroller.is(':animated')) {
       return false;
     }
 
-    $scroller.stop().animate({ scrollLeft: '-=600' }, 150, checkPosition);
+    if (curIndex > 0) {
+      curIndex--;
+    }
+
+    $scroller
+      .stop()
+      .animate({ scrollLeft: arrPos[curIndex] }, 400, checkPosition);
   });
 
   $next.on('click', function () {
-    if ($(this).hasClass(DISABLED_CLASS)) {
+    if ($(this).hasClass(DISABLED_CLASS) || $scroller.is(':animated')) {
       return false;
     }
 
-    $scroller.stop().animate({ scrollLeft: '+=600' }, 150, checkPosition);
+    if (curIndex < arrPos.length) {
+      curIndex++;
+    }
+
+    $scroller
+      .stop()
+      .animate({ scrollLeft: arrPos[curIndex] }, 400, checkPosition);
   });
 };
 
@@ -178,24 +197,44 @@ const ourAssociateMore = () => {
   const view = 3;
   const total = $list.children().length;
   const HIDDEN_CLASS = 'is-hidden';
+  const FADEIN_CLASS = 'u-fade-in';
   let visible = 0;
 
   if (total > view) {
     $list
       .children()
       .filter(`:gt(${view - 1})`)
+      .addClass(FADEIN_CLASS)
       .addClass(HIDDEN_CLASS);
     visible = $list.children().filter(':visible').length;
   } else {
     $button.hide();
   }
 
-  $button.on('click', () => {
+  $button.on('click', (e) => {
+    e.preventDefault();
+
     if (visible < total) {
       $list
         .children()
         .filter(`:lt(${visible + view})`)
-        .removeClass(HIDDEN_CLASS);
+        .removeClass(HIDDEN_CLASS)
+        .queue(function () {
+          const header = $('#gnav').hasClass('is-fixed')
+            ? $('#gnav').height()
+            : 20;
+          const offset = $list.children().eq(visible).offset().top - header;
+
+          $('body, html').stop().animate(
+            {
+              scrollTop: offset,
+            },
+            200
+          );
+          $('this').dequeue();
+        })
+        .stop()
+        .animate({ opacity: 1 }, 1000);
       visible = $list.children().filter(':visible').length;
 
       if (visible >= total) {

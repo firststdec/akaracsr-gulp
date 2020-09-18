@@ -71,13 +71,17 @@
       flex-direction: column;
       justify-content: space-between;
       width: 48%;
-      min-height: 250px;
+      min-height: 300px;
       padding: 30px 40px;
     }
 
     @include mq-up(1400) {
       padding: 50px 80px;
       min-height: 520px;
+    }
+
+    &-in.is-animated {
+      transition-delay: 0.5s !important;
     }
   }
 

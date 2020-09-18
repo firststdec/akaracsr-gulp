@@ -45,7 +45,7 @@
       @include is-opacity;
 
       &.is-disabled {
-        opacity: 0.4 !important;
+        opacity: 0.3 !important;
         cursor: default;
       }
     }
@@ -85,10 +85,12 @@
   }
 
   &__list {
-    overflow: auto;
+    position: relative;
+    overflow: hidden;
     white-space: nowrap;
 
     @include mq-down(md) {
+      overflow: auto;
       display: flex;
       white-space: nowrap;
     }
@@ -103,7 +105,43 @@
     display: flex;
     white-space: nowrap;
 
+    @include mq-up(md) {
+      &:first-child {
+        > div:nth-child(1) {
+          transition-delay: 0.4s !important;
+        }
+
+        > div:nth-child(2) {
+          transition-delay: 0.8s !important;
+        }
+
+        > div:nth-child(3) {
+          transition-delay: 1.4s !important;
+        }
+      }
+
+      &:last-child {
+        > div:nth-child(1) {
+          transition-delay: 1.2s !important;
+        }
+
+        > div:nth-child(2) {
+          transition-delay: 0.6s !important;
+        }
+
+        > div:nth-child(3) {
+          transition-delay: 1s !important;
+        }
+      }
+    }
+
     @include mq-down(md) {
+      &:first-child {
+        > div:nth-child(1) {
+          transition-delay: 0.4s !important;
+        }
+      }
+
       &:last-child {
         padding-left: 30px;
       }

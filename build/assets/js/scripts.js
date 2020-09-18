@@ -123,9 +123,15 @@ var activityScroller = function activityScroller() {
   }
 
   var $scroller = $('.js-activity-scroller');
+  var $row = $('.js-activity-row');
   var $prev = $nav.children('.c-activity__nav-prev');
   var $next = $nav.children('.c-activity__nav-next');
   var DISABLED_CLASS = 'is-disabled';
+  var arrPos = [];
+  var curIndex = 0;
+  $row.find('.js-point').each(function () {
+    arrPos.push($(this).position().left);
+  });
 
   var checkPosition = function checkPosition() {
     var boxWidth = $scroller.width();
@@ -136,22 +142,30 @@ var activityScroller = function activityScroller() {
   };
 
   $prev.on('click', function () {
-    if ($(this).hasClass(DISABLED_CLASS)) {
+    if ($(this).hasClass(DISABLED_CLASS) || $scroller.is(':animated')) {
       return false;
     }
 
+    if (curIndex > 0) {
+      curIndex--;
+    }
+
     $scroller.stop().animate({
-      scrollLeft: '-=600'
-    }, 150, checkPosition);
+      scrollLeft: arrPos[curIndex]
+    }, 400, checkPosition);
   });
   $next.on('click', function () {
-    if ($(this).hasClass(DISABLED_CLASS)) {
+    if ($(this).hasClass(DISABLED_CLASS) || $scroller.is(':animated')) {
       return false;
     }
 
+    if (curIndex < arrPos.length) {
+      curIndex++;
+    }
+
     $scroller.stop().animate({
-      scrollLeft: '+=600'
-    }, 150, checkPosition);
+      scrollLeft: arrPos[curIndex]
+    }, 400, checkPosition);
   });
 };
 
@@ -166,18 +180,30 @@ var ourAssociateMore = function ourAssociateMore() {
   var view = 3;
   var total = $list.children().length;
   var HIDDEN_CLASS = 'is-hidden';
+  var FADEIN_CLASS = 'u-fade-in';
   var visible = 0;
 
   if (total > view) {
-    $list.children().filter(":gt(".concat(view - 1, ")")).addClass(HIDDEN_CLASS);
+    $list.children().filter(":gt(".concat(view - 1, ")")).addClass(FADEIN_CLASS).addClass(HIDDEN_CLASS);
     visible = $list.children().filter(':visible').length;
   } else {
     $button.hide();
   }
 
-  $button.on('click', function () {
+  $button.on('click', function (e) {
+    e.preventDefault();
+
     if (visible < total) {
-      $list.children().filter(":lt(".concat(visible + view, ")")).removeClass(HIDDEN_CLASS);
+      $list.children().filter(":lt(".concat(visible + view, ")")).removeClass(HIDDEN_CLASS).queue(function () {
+        var header = $('#gnav').hasClass('is-fixed') ? $('#gnav').height() : 20;
+        var offset = $list.children().eq(visible).offset().top - header;
+        $('body, html').stop().animate({
+          scrollTop: offset
+        }, 200);
+        $('this').dequeue();
+      }).stop().animate({
+        opacity: 1
+      }, 1000);
       visible = $list.children().filter(':visible').length;
 
       if (visible >= total) {

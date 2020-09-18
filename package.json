@@ -21,7 +21,6 @@
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-babel": "^8.0.0",
-    "gulp-filter": "^6.0.0",
     "gulp-if": "^3.0.0",
     "gulp-imagemin": "^6.0.0",
     "gulp-line-ending-corrector": "^1.0.3",

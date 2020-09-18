@@ -59,7 +59,7 @@
     &.is-animated {
       &::before {
         opacity: 0;
-        transition-delay: 0.5s;
+        transition-delay: 0.5s !important;
       }
     }
 
@@ -179,11 +179,11 @@
     }
 
     &.is-animated {
-      transition-delay: 0.4s;
+      transition-delay: 0.4s !important;
     }
 
     > .is-animated {
-      transition-delay: 0.8s;
+      transition-delay: 0.8s !important;
     }
   }
 }
