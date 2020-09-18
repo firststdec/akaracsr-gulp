@@ -1,0 +1,141 @@
+.c-sec-children-sound {
+  position: relative;
+
+  @include mq-up(md) {
+    padding: 0 20px;
+  }
+
+  &__inner {
+    padding: 35px 0 85px;
+    max-width: 1604px;
+    margin: 0 auto;
+
+    @include mq-up(md) {
+      padding: 55px 60px 55px;
+    }
+
+    @include mq-up(md) {
+      padding: 70px 0 110px;
+    }
+  }
+}
+
+.c-children-sound {
+  $root: &;
+
+  position: relative;
+
+  &__image {
+    position: relative;
+    padding-top: 15px;
+
+    @include mq-up(md) {
+      position: relative;
+      width: 56%;
+      padding-top: 25px;
+      margin-left: auto;
+    }
+  }
+
+  &__heading {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 3;
+    text-align: center;
+
+    @include mq-up(md) {
+      top: 60px;
+      margin-left: -33px;
+    }
+  }
+
+  &__box-quote {
+    position: relative;
+    z-index: 1;
+    width: 80%;
+    padding: 30px 20px;
+    background-color: $blue;
+    color: $white;
+
+    @include mq-down(md) {
+      margin: -35px auto 0;
+    }
+
+    @include mq-up(md) {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 48%;
+      min-height: 250px;
+      padding: 30px 40px;
+    }
+
+    @include mq-up(1400) {
+      padding: 50px 80px;
+      min-height: 520px;
+    }
+  }
+
+  &__quote {
+    font-size: 2.2rem;
+    font-style: italic;
+    line-height: 1.5;
+
+    @include mq-up(1400) {
+      font-size: 3rem;
+    }
+  }
+
+  &__children {
+    margin-top: 50px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+
+    @include mq-up(md) {
+      font-size: 1.6rem;
+    }
+
+    @include mq-up(1400) {
+      font-size: 2.7rem;
+    }
+  }
+
+  & &__pagination {
+    position: relative;
+    margin-top: 35px;
+
+    @include mq-up(md) {
+      position: absolute;
+      left: 0 !important;
+      bottom: 0 !important;
+      z-index: 2;
+      width: 48% !important;
+      margin-top: 0;
+      margin-bottom: 2%;
+    }
+
+    @include mq-up(1400) {
+      margin-bottom: 4%;
+    }
+
+    .swiper-pagination-bullet {
+      background-color: #fff;
+      border: 1px solid $blue;
+
+      @include mq-up(md) {
+        width: 18px;
+        height: 18px;
+        margin: 0 6px !important;
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: $blue;
+    }
+  }
+}

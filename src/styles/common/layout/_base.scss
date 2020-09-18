@@ -1,0 +1,36 @@
+/* ==========================================================
+ layout
+========================================================== */
+html {
+  font-size: 62.5%;
+
+  &.is-locked {
+    position: fixed;
+    left: 0;
+    width: 100%;
+  }
+}
+
+body {
+  background-color: $white;
+  font-family: $font-base;
+  font-size: 1.6rem;
+  color: $blue;
+  line-height: 1.8;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+
+  @include mq-down(md) {
+    overflow-x: hidden;
+  }
+}
+
+/* contents
+---------------------------------------------------------- */
+.l-contents {
+  // @include mq-down(md) {
+  // }
+
+  // @include mq-up(md) {
+  // }
+}

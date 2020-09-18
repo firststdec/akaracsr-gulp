@@ -1,0 +1,44 @@
+meta(charset="utf-8")
+meta(
+  name="viewport"
+  content=(
+    meta && meta.viewport
+    ? meta.viewport
+    : "width=device-width,initial-scale=1.0,minimum-scale=1.0"
+  )
+)
+meta(http-equiv="X-UA-Compatible" content="IE=edge")
+meta(name="format-detection" content="telephone=no")
+title=(meta && meta.title ? meta.title : "")
+meta(
+  name="keyword"
+  content=(meta && meta.keyword ? meta.keyword : "")
+)
+meta(
+  name="description"
+  content=(meta && meta.description ? meta.description : "")
+)
+meta(
+  property="og:title"
+  content=(meta && meta.title ? meta.title : "")
+)
+meta(
+  property="og:description"
+  content=(meta && meta.description ? meta.description : "")
+)
+meta(
+  property="og:type"
+  content=(meta && meta.type ? meta.type : "")
+)
+meta(
+  property="og:site_name"
+  content=(meta && meta.site_name ? meta.site_name : "")
+)
+meta(
+  property="og:url"
+  content=(meta && meta.url ? meta.url : "")
+)
+meta(
+  property="og:image"
+  content=(meta && meta.image ? meta.image : "")
+)

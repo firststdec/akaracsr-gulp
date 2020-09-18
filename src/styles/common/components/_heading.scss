@@ -1,0 +1,25 @@
+/* c-heading-type1
+---------------------------------------------------------- */
+.c-heading-type1 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  height: 30px;
+  background-color: $yellow;
+  font-size: 1.1rem;
+  font-weight: bold;
+  line-height: 1.5;
+  text-transform: uppercase;
+
+  @include mq-up(md) {
+    min-width: 205px;
+    height: 50px;
+    font-size: 1.7rem;
+  }
+
+  &--blue {
+    background-color: $blue;
+    color: $white;
+  }
+}
