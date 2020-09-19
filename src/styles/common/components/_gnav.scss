@@ -97,6 +97,7 @@
   &__list {
     @include mq-up(md) {
       display: flex;
+      max-width: 800px;
     }
   }
 
