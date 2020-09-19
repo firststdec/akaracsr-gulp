@@ -80,7 +80,7 @@
         }
       }
 
-      &:nth-child(1) {
+      &:nth-child(3n-2) {
         > .is-animated:nth-child(1) {
           transition-delay: 0.3s !important;
         }
@@ -90,7 +90,7 @@
         }
       }
 
-      &:nth-child(2) {
+      &:nth-child(3n-1) {
         > .is-animated:nth-child(1) {
           transition-delay: 1.5s !important;
         }
@@ -100,7 +100,7 @@
         }
       }
 
-      &:nth-child(3) {
+      &:nth-child(3n) {
         > .is-animated:nth-child(1) {
           transition-delay: 1.2s !important;
         }

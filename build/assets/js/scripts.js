@@ -184,7 +184,7 @@ var ourAssociateMore = function ourAssociateMore() {
   var visible = 0;
 
   if (total > view) {
-    $list.children().filter(":gt(".concat(view - 1, ")")).addClass(FADEIN_CLASS).addClass(HIDDEN_CLASS);
+    $list.children().filter(":gt(".concat(view - 1, ")")).addClass(HIDDEN_CLASS);
     visible = $list.children().filter(':visible').length;
   } else {
     $button.hide();
@@ -194,16 +194,17 @@ var ourAssociateMore = function ourAssociateMore() {
     e.preventDefault();
 
     if (visible < total) {
-      $list.children().filter(":lt(".concat(visible + view, ")")).removeClass(HIDDEN_CLASS).queue(function () {
+      var $target = $list.children().filter(":lt(".concat(visible + view, ")"));
+      $target.removeClass(HIDDEN_CLASS).queue(function () {
         var header = $('#gnav').hasClass('is-fixed') ? $('#gnav').height() : 20;
         var offset = $list.children().eq(visible).offset().top - header;
         $('body, html').stop().animate({
           scrollTop: offset
-        }, 200);
+        }, 100, function () {
+          $target.children().addClass('is-animated');
+        });
         $('this').dequeue();
-      }).stop().animate({
-        opacity: 1
-      }, 1000);
+      });
       visible = $list.children().filter(':visible').length;
 
       if (visible >= total) {

@@ -37,9 +37,7 @@ const initAnimation = () => {
         countUpDown($(this.element), 0, number);
       }, 900);
     },
-    {
-      offset: '80%',
-    }
+    { offset: '80%' }
   );
 
   const ANIMATED_CLASS = 'is-animated';
@@ -52,9 +50,7 @@ const initAnimation = () => {
 
       $(this.element).addClass(ANIMATED_CLASS);
     },
-    {
-      offset: '80%',
-    }
+    { offset: '80%' }
   );
 };
 
@@ -204,7 +200,6 @@ const ourAssociateMore = () => {
     $list
       .children()
       .filter(`:gt(${view - 1})`)
-      .addClass(FADEIN_CLASS)
       .addClass(HIDDEN_CLASS);
     visible = $list.children().filter(':visible').length;
   } else {
@@ -215,9 +210,8 @@ const ourAssociateMore = () => {
     e.preventDefault();
 
     if (visible < total) {
-      $list
-        .children()
-        .filter(`:lt(${visible + view})`)
+      const $target = $list.children().filter(`:lt(${visible + view})`);
+      $target
         .removeClass(HIDDEN_CLASS)
         .queue(function () {
           const header = $('#gnav').hasClass('is-fixed')
@@ -225,16 +219,12 @@ const ourAssociateMore = () => {
             : 20;
           const offset = $list.children().eq(visible).offset().top - header;
 
-          $('body, html').stop().animate(
-            {
-              scrollTop: offset,
-            },
-            200
+          $('body, html').stop().animate({ scrollTop: offset }, 100, () => {
+              $target.children().addClass('is-animated');
+            }
           );
           $('this').dequeue();
-        })
-        .stop()
-        .animate({ opacity: 1 }, 1000);
+        });
       visible = $list.children().filter(':visible').length;
 
       if (visible >= total) {

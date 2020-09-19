@@ -48,6 +48,7 @@
     @include mq-up(md) {
       position: relative;
       max-width: 1640px;
+      margin: 0 auto;
     }
   }
 
