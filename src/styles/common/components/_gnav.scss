@@ -97,7 +97,6 @@
   &__list {
     @include mq-up(md) {
       display: flex;
-      max-width: 800px;
     }
   }
 
@@ -108,7 +107,7 @@
       }
 
       @include mq-up(md) {
-        margin-left: 8.333vw;
+        margin-left: 80px;
       }
     }
   }
