@@ -215,3 +215,16 @@ var ourAssociateMore = function ourAssociateMore() {
     return false;
   });
 };
+/* ----------------------------------------------------------
+  Polyfill
+---------------------------------------------------------- */
+// isNan
+
+
+if (!Number.isNan) {
+  Object.defineProperty(Number, 'isNaN', {
+    value: function value(_value) {
+      return _value !== _value;
+    }
+  });
+}
