@@ -80,6 +80,8 @@
     padding: 0 35px;
 
     @include mq-up(md) {
+      overflow: hidden;
+      max-height: 890px;
       margin-top: 50px;
       padding: 0 20px;
     }
@@ -87,7 +89,7 @@
 
   &__list {
     position: relative;
-    overflow: hidden;
+    overflow: auto;
     white-space: nowrap;
 
     @include mq-down(md) {
@@ -99,6 +101,7 @@
     @include mq-up(md) {
       max-width: 1636px + 40px;
       margin: 0 auto;
+      padding-bottom: 50px;
     }
   }
 
@@ -150,6 +153,7 @@
   }
 
   &__item {
+    flex: 0 0 auto;
     width: 300px;
     margin-right: 30px;
     background: $yellow;
