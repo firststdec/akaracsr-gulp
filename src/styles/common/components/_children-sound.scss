@@ -45,7 +45,6 @@
     text-align: center;
 
     @include mq-up(md) {
-      top: 60px;
       margin-left: -33px;
     }
   }

@@ -3,7 +3,6 @@
 .c-hero {
   $root: &;
 
-  overflow: hidden;
   position: relative;
   min-height: 667px;
   height: 100vh;
@@ -14,6 +13,7 @@
   }
 
   &__bg {
+    overflow: hidden;
     position: absolute;
     top: 0;
     right: 0;
