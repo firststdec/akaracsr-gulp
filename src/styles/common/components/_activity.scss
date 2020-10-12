@@ -229,7 +229,7 @@
         }
 
         #{$this}__frame {
-          height: 500px;
+          height: 480px;
 
           @include mq-up(md) {
             height: 400px;
