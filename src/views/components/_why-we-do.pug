@@ -1,4 +1,8 @@
 .c-why-we-do(id='problems')
+  .js-inview.u-fade-in-up
+    img.c-why-we-do__swap(src="assets/images/common/icon_swap.svg")
+    p.c-heading-type1.c-why-we-do__label ที่มาของโครงการ
+
   .c-why-we-do__inner.js-inview.u-fade-in-up
     .c-why-we-do__slider-prev.is-disabled
     .c-why-we-do__slider-next
@@ -6,10 +10,9 @@
       .c-why-we-do__wrapper.swiper-wrapper
         .c-why-we-do__slider.swiper-slide
           .c-why-we-do__box
-            p.c-heading-type1.c-why-we-do__label ที่มาของโครงการ
             p.c-why-we-do__heading ปัญหาความยากจนและขาดแคลนอาหาร
             .c-why-we-do__content
-              p จากวิกฤติโควิด-19 ที่ผ่านมาซึ่งส่งผลกระทบต่อผู้คนทั่วโลก รวมถึงในประเทศไทยเองก็ได้รับผลกระทบเช่นเดียวกัน ทั้งบริษัทที่ต้องปิดตัวลง หรือเด็กนักเรียนที่ต้องหยุดเรียนในช่วงโควิด โดยเฉพาะกับน้อง ๆ นักเรียนในถิ่นทุรกันดารที่ได้รับผลกระทบเป็นอย่างมากเพราะผลกระทบจากปัญหาเศรษฐกิจและความยากจน
+              p จากวิกฤติโควิด-19 ที่ผ่านมาซึ่งส่งผลกระทบต่อผู้คนทั่วโลก รวมถึงในประเทศไทยเองก็ประสบกับปัญหานี้เช่นเดียวกัน โดยเฉพาะกับเด็กนักเรียนในถิ่นทุรกันดารที่ต้องหยุดเรียนอย่างไม่มีกำหนด จนทำให้เกิดปัญหาสุขภาพตามมา
               br
               p นักเรียนยากจนพิเศษกว่า 100,000 คน ภายใต้การดูแลของ กสศ. (กองทุนเพื่อความเสมอภาคทางการศึกษา) เกิดปัญหาภาวะทุพโภชนาการหรือภาวะขาดแคลนอาหาร เพราะสำหรับน้อง ๆ เหล่านี้ โรงเรียนไม่ใช่แค่สถานศึกษา แต่ยังเป็นสถานที่ที่น้อง ๆ จะได้รับสารอาหารอย่างพอเพียงจากอาหารกลางวันที่ได้รับประทานในโรงเรียน 
           .c-why-we-do__box
@@ -18,7 +21,6 @@
         //- c-why-we-do__slider
         .c-why-we-do__slider.swiper-slide
           .c-why-we-do__box
-            p.c-heading-type1.c-why-we-do__label ที่มาของโครงการ
             p.c-why-we-do__heading น้อง ๆ ที่ประสบปัญหาทุพโภชนาการ
             .c-why-we-do__content
               p โดยจากผลการสำรวจของ กสศ. พบว่านักเรียนกลุ่มยากจนพิเศษ กว่า 100,000 คน มีน้ำหนักน้อยกว่าเกณฑ์มากถึง 46,053 คน และน้ำหนักน้อย 54,108 คน ซึ่งส่วนใหญ่เป็นนักเรียนชั้นประถมศึกษากว่า 73% ซึ่งส่วนใหญ่อยู่ในพื้นที่ห่างไกล และประสบปัญหาขาดแคลนอาหารมาเป็นเวลานาน ซึ่งสะสมมาจากความยากจนของครอบครัว ความไม่สะดวกในการประกอบอาหาร รวมถึงการขาดความรู้ด้านโภชนาการ จนทำให้น้อง ๆ กลุ่มนี้มีปัญหาทางด้านการเจริญเติบโตทั้งทางร่างกาย สติปัญหา และความสามารถในการเรียนรู้
@@ -26,6 +28,7 @@
             figure.c-why-we-do__frame
               img.c-why-we-doimage(src="assets/images/why-we-do/img_whywedo_02.jpg", alt="เด็กๆ ที่มีความยากจน")
         //- c-why-we-do__slider
+      .c-why-we-do__pagination.swiper-pagination
     //- c-why-we-do__container
 
   .c-box-arrow._d-sm-none
@@ -35,7 +38,7 @@
 .c-what-we-do(id='campaign')
   .c-what-we-do__inner
     .c-what-we-do__media.js-inview.u-fade-in
-      a.c-what-we-do__media-link.js-modal-video(href='https://www.youtube.com/embed/8dVSeHLBYsQ?autoplay=1', target='_blank')
+      a.c-what-we-do__media-link.js-modal-video._d-none(href='https://www.youtube.com/embed/8dVSeHLBYsQ?autoplay=1', target='_blank')
       video(
         autoplay=""
         playsinline=""
@@ -114,6 +117,7 @@
 .c-activity(id='activities')
   .c-activity__inner
     .c-activity__box-title.js-inview.u-fade-in-up
+      img.c-activity__swap(src="assets/images/common/icon_swap.svg")
       .c-activity__box-label
         h2.c-heading-type1 กิจกรรม
     

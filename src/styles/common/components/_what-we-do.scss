@@ -10,9 +10,12 @@
   }
 
   &__inner {
+    padding-bottom: 44px;
+
     @include mq-up(md) {
       max-width: 1920px;
       margin: 0 auto;
+      padding-bottom: 0;
     }
   }
 
@@ -161,6 +164,7 @@
     background: $blue;
     padding: 30px 30px 70px;
     position: relative;
+    z-index: 1;
     font-size: 1.3rem;
     margin-top: -25px;
 

@@ -64,7 +64,11 @@ const whyWeDoSlider = () => {
     speed: 500,
     spaceBetween: 50,
     draggable: true,
-    pagination: false,
+    pagination: {
+      el: '.c-why-we-do__pagination',
+      type: 'bullets',
+      clickable: true
+    },
     resistanceRatio: 0,
   });
 

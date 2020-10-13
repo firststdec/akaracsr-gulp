@@ -343,6 +343,7 @@
 
   &__list {
     display: flex;
+    justify-content: center;
     margin: 10px -16px 0;
 
     @include mq-up(1400) {

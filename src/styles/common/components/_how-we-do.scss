@@ -15,14 +15,14 @@
 
   &__item {
     &.is-animated {
-      transition-delay: 0.4s !important;
+      transition-delay: 0.3s !important;
 
       &:nth-child(2n) {
-        transition-delay: 0.8s !important;
+        transition-delay: 0.45s !important;
       }
 
       &:nth-child(3n) {
-        transition-delay: 1.2s !important;
+        transition-delay: 0.55s !important;
       }
     }
 
