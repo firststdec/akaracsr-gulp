@@ -24,6 +24,40 @@ var countUpDown = function countUpDown($number, baseNumber, resultNumber) {
 };
 
 var initAnimation = function initAnimation() {
+  var totalNumber = 112748;
+  var date = new Date();
+  var today = (date.getMonth() + 1).toString() + '-' + date.getDate().toString();
+  var numberList = {
+    '10-14': 5638,
+    '10-15': 5638,
+    '10-16': 5638,
+    '10-17': 10484,
+    '10-18': 14996,
+    '10-19': 19054,
+    '10-20': 23000,
+    '10-21': 26044,
+    '10-22': 29426,
+    '10-23': 33260,
+    '10-24': 37334,
+    '10-25': 42632,
+    '10-26': 46916,
+    '10-27': 50072,
+    '10-28': 53890,
+    '10-29': 56934,
+    '10-30': 61556,
+    '10-31': 69448,
+    '11-1': 77792,
+    '11-2': 83656,
+    '11-3': 90082,
+    '11-4': 96734,
+    '11-5': 104062,
+    '11-6': 112748
+  };
+
+  if (numberList[today] !== 'undefined') {
+    totalNumber[today];
+  }
+
   $('.js-inview-number').waypoint(function () {
     var _this = this;
 
@@ -33,8 +67,8 @@ var initAnimation = function initAnimation() {
 
     $(this.element).addClass(ANIMATED_CLASS);
     setTimeout(function () {
-      var number = $(_this.element).data('number');
-      countUpDown($(_this.element), 0, number);
+      // const number = $(this.element).data('number');
+      countUpDown($(_this.element), 0, totalNumber);
     }, 900);
   }, {
     offset: '80%'

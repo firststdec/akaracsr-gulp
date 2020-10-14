@@ -26,12 +26,11 @@
 
   &__logo {
     display: block;
-    width: 106px;
+    width: 90px;
     margin: 0 auto;
 
     @include mq-up(md) {
-      width: 17.92%;
-      max-width: 294px;
+      width: 120px;
     }
 
     > img {
@@ -45,7 +44,7 @@
       display: flex;
       justify-content: space-between;
       flex: 1;
-      margin-left: 7.45%;
+      margin-left: 5.45%;
     }
   }
 

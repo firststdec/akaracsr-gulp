@@ -230,18 +230,18 @@
     justify-content: center;
     align-items: center;
     min-width: 85px;
-    height: 21px;
+    height: 30px;
     background-color: $yellow;
     border-radius: 26px;
-    font-size: 1rem;
+    font-size: 2rem;
     line-height: 1;
     color: $white;
     text-align: center;
 
     @include mq-up(md) {
       width: 200px;
-      height: 50px;
-      font-size: 2.7rem;
+      height: 55px;
+      font-size: 3.5rem;
     }
   }
 
@@ -262,17 +262,17 @@
     align-items: center;
     margin-top: 12px;
     color: $white;
-    font-size: 1rem;
+    font-size: 1.8rem;
 
     @include mq-up(md) {
       margin-top: 20px;
-      font-size: 2.2rem;
+      font-size: 2.6rem;
     }
 
     &::before {
       content: '';
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       margin-right: 10px;
       background-image: url('../images/common/ico_play_video.svg');
       background-size: 100% auto;
@@ -280,8 +280,8 @@
       background-repeat: no-repeat;
 
       @include mq-up(md) {
-        width: 48px;
-        height: 48px;
+        width: 50px;
+        height: 50px;
         margin-right: 18px;
       }
     }
@@ -363,12 +363,12 @@
 
   &__number {
     font-weight: bold;
-    font-size: 1.8rem;
+    font-size: 2rem;
     line-height: 1;
     color: $white;
 
     @include mq-up(md) {
-      font-size: 2rem;
+      font-size: 2.2rem;
     }
 
     @include mq-up(1400) {
@@ -384,6 +384,17 @@
 
     @include mq-up(md) {
       font-size: 1.8rem;
+    }
+  }
+
+  &__time {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+
+    @include mq-up(md) {
+      font-size: 1.4rem;
     }
   }
 }

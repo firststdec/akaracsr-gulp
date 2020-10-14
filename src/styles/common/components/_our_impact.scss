@@ -65,17 +65,18 @@
 
   &__box-donate {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     position: absolute;
     width: 100vw;
-    bottom: 20%;
+    bottom: 30%;
     
     &.is-animated {
       transition-delay: 0.5s !important;
     }
 
     @include mq-up(md) {
-      bottom: 100px;
+      bottom: 160px;
       width: auto;
       left: 100px;
       right: 100px;
@@ -104,6 +105,21 @@
 
       @include mq-up(md) {
         font-size: 5.9rem;
+      }
+    }
+
+    &-time {
+      position: absolute;
+      bottom: 20%;
+      left: 50%;
+      font-size: 1.2rem;
+      color: #fff;
+      text-align: center;
+      transform: translateX(-50%);
+
+      @include mq-up(md) {
+        bottom: 110px;
+        font-size: 2rem;
       }
     }
   }
