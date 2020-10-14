@@ -24,7 +24,7 @@ var countUpDown = function countUpDown($number, baseNumber, resultNumber) {
 };
 
 var initAnimation = function initAnimation() {
-  var totalNumber = 112748;
+  var totalNumber = 0;
   var date = new Date();
   var today = (date.getMonth() + 1).toString() + '-' + date.getDate().toString();
   var numberList = {
@@ -55,7 +55,7 @@ var initAnimation = function initAnimation() {
   };
 
   if (numberList[today] !== 'undefined') {
-    totalNumber[today];
+    totalNumber = numberList[today];
   }
 
   $('.js-inview-number').waypoint(function () {
@@ -67,8 +67,8 @@ var initAnimation = function initAnimation() {
 
     $(this.element).addClass(ANIMATED_CLASS);
     setTimeout(function () {
-      // const number = $(this.element).data('number');
-      countUpDown($(_this.element), 0, totalNumber);
+      var number = totalNumber > 0 ? totalNumber : $(_this.element).data('number');
+      countUpDown($(_this.element), 0, number);
     }, 900);
   }, {
     offset: '80%'

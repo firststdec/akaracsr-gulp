@@ -25,7 +25,7 @@ const countUpDown = ($number, baseNumber, resultNumber) => {
 };
 
 const initAnimation = () => {
-  let totalNumber = 112748;
+  let totalNumber = 0;
   const date = new Date();
   const today = (date.getMonth() + 1).toString() + '-' + date.getDate().toString();
   const numberList = {
@@ -56,7 +56,7 @@ const initAnimation = () => {
   };
 
   if (numberList[today] !== 'undefined') {
-    totalNumber[today];
+    totalNumber = numberList[today];
   }
 
   $('.js-inview-number').waypoint(
@@ -67,8 +67,8 @@ const initAnimation = () => {
 
       $(this.element).addClass(ANIMATED_CLASS);
       setTimeout(() => {
-        // const number = $(this.element).data('number');
-        countUpDown($(this.element), 0, totalNumber);
+        const number = totalNumber > 0 ? totalNumber : $(this.element).data('number');
+        countUpDown($(this.element), 0, number);
       }, 900);
     },
     { offset: '80%' }
