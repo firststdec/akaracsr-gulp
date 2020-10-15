@@ -83,7 +83,7 @@
   &__logo {
     &-link {
       display: block;
-      width: 175px;
+      width: 185px;
 
       @include mq-down(1400) {
         display: none;

@@ -7,6 +7,7 @@ $(function () {
   childrenSoundSlider();
   activityScroller();
   ourAssociateMore();
+  fbShareButton();
 });
 $(window).on('load', function () {
   initAnimation();
@@ -68,7 +69,7 @@ var initAnimation = function initAnimation() {
 
     $(this.element).addClass(ANIMATED_CLASS);
     setTimeout(function () {
-      /*var number = totalNumber > 0 ? totalNumber : $(_this.element).data('number');//First Edited*/
+      /*const number = totalNumber > 0 ? totalNumber : $(this.element).data('number');//First Edited*/
       var number = totalNumber > 0 ? totalNumber : 0;
       countUpDown($(_this.element), 0, number);
     }, 900);
@@ -252,6 +253,14 @@ var ourAssociateMore = function ourAssociateMore() {
       }
     }
 
+    return false;
+  });
+};
+
+var fbShareButton = function fbShareButton() {
+  $('.js-fb-share').click(function (e) {
+    e.preventDefault();
+    window.open($(this).attr('href'), 'fbShareWindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 275) + ', left=' + ($(window).width() / 2 - 225) + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
     return false;
   });
 };
