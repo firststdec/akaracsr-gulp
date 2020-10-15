@@ -28,30 +28,31 @@ var initAnimation = function initAnimation() {
   var date = new Date();
   var today = (date.getMonth() + 1).toString() + '-' + date.getDate().toString();
   var numberList = {
-    '10-14': 5638,
-    '10-15': 5638,
-    '10-16': 5638,
-    '10-17': 10484,
-    '10-18': 14996,
-    '10-19': 19054,
-    '10-20': 23000,
-    '10-21': 26044,
-    '10-22': 29426,
-    '10-23': 33260,
-    '10-24': 37334,
-    '10-25': 42632,
-    '10-26': 46916,
-    '10-27': 50072,
-    '10-28': 53890,
-    '10-29': 56934,
-    '10-30': 61556,
-    '10-31': 69448,
-    '11-1': 77792,
-    '11-2': 83656,
-    '11-3': 90082,
-    '11-4': 96734,
-    '11-5': 104062,
-    '11-6': 112748
+    '10-14': 0,
+    '10-15': 0,
+    '10-16': 0,
+    '10-17': 5638,
+    '10-18': 10484,
+    '10-19': 14996,
+    '10-20': 19054,
+    '10-21': 23000,
+    '10-22': 26044,
+    '10-23': 29426,
+    '10-24': 33260,
+    '10-25': 37334,
+    '10-26': 42632,
+    '10-27': 46916,
+    '10-28': 50072,
+    '10-29': 53890,
+    '10-30': 56934,
+    '10-31': 61556,
+    '11-1': 69448,
+    '11-2': 77792,
+    '11-3': 83656,
+    '11-4': 90082,
+    '11-5': 96734,
+    '11-6': 104062,
+    '11-7': 112748
   };
 
   if (numberList[today] !== 'undefined') {
@@ -67,7 +68,8 @@ var initAnimation = function initAnimation() {
 
     $(this.element).addClass(ANIMATED_CLASS);
     setTimeout(function () {
-      var number = totalNumber > 0 ? totalNumber : $(_this.element).data('number');
+      /*var number = totalNumber > 0 ? totalNumber : $(_this.element).data('number');//First Edited*/
+      var number = totalNumber > 0 ? totalNumber : 0;
       countUpDown($(_this.element), 0, number);
     }, 900);
   }, {
